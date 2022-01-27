@@ -1,0 +1,8 @@
+
+<% name_list.each do |name| %>
+  <p>
+    <label>
+      <%= l(name.to_sym) %>:</label>
+    <%= number_field_tag("settings[#{name}]", settings[name] || defaults[name.to_sym]) %>
+  </p>
+<% end %>

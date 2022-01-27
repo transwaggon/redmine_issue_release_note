@@ -1,0 +1,42 @@
+# English strings go here for Rails i18n
+en:
+  release_note: Release Note
+  download_release_note: Download Release Note
+  missing_release_note: Please fill the release note fields
+  issue_identifier: Ticket
+  issue_subject: Title
+  issue_developer: Developer
+  release_note_date: Release Date
+
+  rn_yes: Yes
+  rn_no: No
+  page: Page Settings
+  rn_page_margin_left: Margin Left
+  rn_page_margin_top: Margin Top
+  rn_page_margin_right: Margin Right
+  rn_font_size_title: Title Font Size
+  rn_font_size_caption: Caption Font Size
+  rn_font_size_default: Standard Font Size
+  header: Header
+  rn_header_enabled: Enabled
+  rn_header_margin: Margin
+  rn_header_logo_width: Logo Width
+  rn_header_logo: Logo Path
+  footer: Footer
+  rn_footer_enabled: Enabled
+  rn_footer_margin: Margin
+  rn_footer_logo_width: Logo Width
+  rn_footer_logo: Logo Path
+  rn_footer_font_size_company: Company Font Size
+  rn_footer_company: Company Informations
+  others: Others
+  rn_list_caption_width: Column Width Field
+  rn_field_gap: Gap between Custom Fields
+  rn_time_activity_id: Enumerations Activity ID
+  rn_time_activity_find: Link Enumerations
+  rn_override_language: Language
+  rn_image_scale: Image Scale
+  rn_names_text: Custom Field Names
+  rn_attachment_regex: RegEx to find attachments
+  rn_attachment_regex_hint: Separator is |, Dot . for all
+  default_separator_hint: Separator is |

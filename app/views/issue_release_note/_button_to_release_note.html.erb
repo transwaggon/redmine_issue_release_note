@@ -1,0 +1,12 @@
+<% release_values = @issue.custom_field_values_by_reg(/(release)/i) %>
+
+<%# todo Create setting for field count %>
+<% if release_values.count == 3 %>
+  <% values = release_values.map { |value| value.value }.reject(&:empty?) %>
+    <%= button_to(t('download_release_note', default: 'Download Release Note'),
+                  download_release_note_path(format: :pdf),
+                  method: :get, disabled: values.count != 3) %>
+  <% if values.count != 3 %>
+    <%= t('missing_release_note') %>
+  <% end %>
+<% end %>

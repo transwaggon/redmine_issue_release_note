@@ -1,0 +1,42 @@
+# German strings are here
+de:
+  release_note: Release Note
+  download_release_note: Release Note herunterladen
+  missing_release_note: Bitte füllen Sie die Release Note Felder aus
+  issue_identifier: Ticket
+  issue_subject: Titel
+  issue_developer: Entwickler
+  release_note_date: Release Datum
+
+  rn_yes: Ja
+  rn_no: Nein
+  page: Seiteneinstellungen
+  rn_page_margin_left: Abstand Links
+  rn_page_margin_top: Abstand Oben
+  rn_page_margin_right: Abstand rechts
+  rn_font_size_title: Titel Schriftgröße
+  rn_font_size_caption: Überschrift Schriftgröße
+  rn_font_size_default: Standard Schriftgröße
+  header: Kopfzeile
+  rn_header_enabled: Aktiviert
+  rn_header_margin: Abstand
+  rn_header_logo_width: Logo Breite
+  rn_header_logo: Logo Pfad
+  footer: Fusszeile
+  rn_footer_enabled: Aktiviert
+  rn_footer_margin: Abstand
+  rn_footer_logo_width: Logo Breite
+  rn_footer_logo: Logo Pfad
+  rn_footer_font_size_company: Firma Schriftgröße
+  rn_footer_company: Firmenangaben
+  others: Sonstiges
+  rn_list_caption_width: Spaltenbreite Feldbeschriftung
+  rn_field_gap: Abstand zwischen benutzerspez. Feldern
+  rn_time_activity_id: Aufzählung Aktivität ID
+  rn_time_activity_find: Link Aufzählung
+  rn_override_language: Sprache
+  rn_image_scale: Bild-Skalierung
+  rn_names_text: Benutzerspezifische Feldnamen
+  rn_attachment_regex: RegEx zum Finden von Anhängen
+  rn_attachment_regex_hint: Trenner ist ein |, Punkt . für alle
+  default_separator_hint: Trenner ist ein |
