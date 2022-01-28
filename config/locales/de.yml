@@ -5,6 +5,7 @@ de:
   download_release_note: Release Note herunterladen
   rn_overview: Übersicht
   missing_release_note: Bitte füllen Sie die Release Note Felder aus
+  release_note_incomplete: Release Note Daten sind noch unvollständig
   issue_identifier: Ticket
   issue_subject: Titel
   issue_developer: Entwickler

@@ -38,7 +38,8 @@
           <td class="subject"><%= link_to issue.subject, issue_path(issue) %></td>
           <td class="release_date"><%= format_date(issue.release_date) %></td>
           <td class="buttons">
-            <%= render partial: 'issue_release_note/button_to_release_note' %>
+            <%= render partial: 'issue_release_note/button_to_release_note',
+                       locals: { force_button: false, missing_hint_i18n_key: 'release_note_incomplete' } %>
           </td>
         </tr>
       <% end %>
