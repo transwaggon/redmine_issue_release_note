@@ -6,7 +6,7 @@
     <%= button_to(t('download_release_note', default: 'Download Release Note'),
                   download_release_note_path(format: :pdf),
                   method: :get, disabled: values.count != correct_count) %>
-  <% if values.count != 3 %>
+  <% if values.count != correct_count %>
     <%= t('missing_release_note') %>
   <% end %>
 <% end %>
