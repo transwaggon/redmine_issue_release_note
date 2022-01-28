@@ -39,7 +39,8 @@ de:
   rn_time_activity_find: Link Aufzählung
   rn_override_language: Sprache
   rn_image_scale: Bild-Skalierung
-  rn_names_text: Benutzerspezifische Feldnamen
+  rn_names_text: Benutzerspez. Feldnamen
+  rn_name_date: Benutzerspez. Feldname für Release Datum
   rn_attachment_regex: RegEx zum Finden von Anhängen
   rn_attachment_regex_hint: Trenner ist ein |, Punkt . für alle
   default_separator_hint: Trenner ist ein |

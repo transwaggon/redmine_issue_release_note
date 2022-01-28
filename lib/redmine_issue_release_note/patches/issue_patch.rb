@@ -5,7 +5,9 @@ module RedmineIssueReleaseNote::Patches::IssuePatch
 
   included do
     def self.release_notes
-      custom_field_id = IssueCustomField.where('name like ?', 'release dat%').first
+      custom_field_id = IssueCustomField
+                          .where(name: Setting.plugin_redmine_issue_release_note['rn_name_date'] || 'Release Date')
+                          .first
       Issue.joins(:custom_values)
            .where(custom_values: { custom_field: custom_field_id } )
            .order(value: :desc)
@@ -34,10 +36,9 @@ module RedmineIssueReleaseNote::Patches::IssuePatch
     end
 
     def release_date
-      # todo move to settings
-      custom_field_value_by_names(['Release Datum', 'Release Date'])&.to_date
+      date_field_name = Setting.plugin_redmine_issue_release_note['rn_name_date'] || 'Release Date'
+      custom_field_value_by_names([date_field_name])&.to_date
     end
-
   end
 end
 

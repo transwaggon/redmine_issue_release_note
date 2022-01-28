@@ -57,6 +57,11 @@
                      title: l(:default_separator_hint) ) %>
 </p>
 <p>
+  <label><%= l(:rn_name_date) %>:</label>
+  <%= text_field_tag('settings[rn_name_date]',
+                     settings['rn_name_date'] || defaults[:rn_name_date] ) %>
+</p>
+<p>
   <label><%= l(:rn_time_activity_id) %>:</label>
   <%= number_field_tag("settings[rn_time_activity_id]",
                        settings['rn_time_activity_id'] || defaults[:rn_time_activity_id]) %>
