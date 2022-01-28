@@ -4,7 +4,7 @@
 <% if release_values.count == correct_count %>
   <% values = release_values.map(&:value).compact.reject(&:empty?) %>
     <%= button_to(t('download_release_note', default: 'Download Release Note'),
-                  download_release_note_path(format: :pdf),
+                  download_release_note_path(@issue, format: :pdf),
                   method: :get, disabled: values.count != correct_count) %>
   <% if values.count != correct_count %>
     <%= t('missing_release_note') %>

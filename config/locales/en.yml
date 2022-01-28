@@ -1,12 +1,15 @@
 # English strings go here for Rails i18n
 en:
   release_note: Release Note
+  release_notes: Release Notes
   download_release_note: Download Release Note
+  rn_overview: Overview
   missing_release_note: Please fill the release note fields
   issue_identifier: Ticket
   issue_subject: Title
   issue_developer: Developer
   release_note_date: Release Date
+  release_note_date_filter: Released from/until
 
   rn_yes: Yes
   rn_no: No

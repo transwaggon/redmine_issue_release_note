@@ -1,0 +1,57 @@
+<h2><%=l(:release_notes)%></h2>
+
+<% unless @no_layout %>
+  <%= form_tag(release_notes_path, { method: :get, id: 'release_note_form' }) do %>
+    <fieldset>
+      <legend><%= l(:label_filter_plural) %></legend>
+
+      <%= label_tag 'subject', l(:field_subject)%>
+      <%= text_field_tag 'subject', params[:subject], size: 30 %>
+
+      <%= label_tag 'release_date', l(:release_note_date_filter)%>
+      <%= date_field_tag 'release_date_from', params[:release_date_from] %>
+      /
+      <%= date_field_tag 'release_date_until', params[:release_date_until] %>
+
+      <%= submit_tag l(:button_apply), class: 'small', :name => nil %>
+      <%= link_to l(:button_clear), release_notes_path, class: 'icon icon-reload' %>
+    </fieldset>
+  <% end %>
+<% end %>
+
+<% if @release_notes.any? %>
+  <div class="autoscroll">
+    <table class="list release_notes">
+      <thead><tr>
+        <th>#</th>
+        <th> <%= l(:field_tracker) %> </th>
+        <th> <%= l(:field_subject) %> </th>
+        <th> <%= l(:release_note_date) %> </th>
+        <th></th>
+      </tr></thead>
+      <tbody>
+      <% @release_notes.each do |issue| %>
+        <% @issue = issue %>
+        <tr class="<%= issue.css_classes %>">
+          <td class="issue"><%= link_to issue.id, issue_path(issue) %></td>
+          <td class="tracker"> <%= issue.tracker&.name %> </td>
+          <td class="subject"><%= link_to issue.subject, issue_path(issue) %></td>
+          <td class="release_date"><%= format_date(issue.release_date) %></td>
+          <td class="buttons">
+            <%= render partial: 'issue_release_note/button_to_release_note' %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% unless @no_layout %>
+    <span class="pagination">
+      <%= pagination_links_full @release_notes_pages, @release_notes_count %>
+    </span>
+  <% end %>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
+
+<% html_title(l(:release_notes)) -%>

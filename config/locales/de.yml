@@ -1,12 +1,15 @@
 # German strings are here
 de:
   release_note: Release Note
+  release_notes: Release Notes
   download_release_note: Release Note herunterladen
+  rn_overview: Übersicht
   missing_release_note: Bitte füllen Sie die Release Note Felder aus
   issue_identifier: Ticket
   issue_subject: Titel
   issue_developer: Entwickler
   release_note_date: Release Datum
+  release_note_date_filter: Released von/bis
 
   rn_yes: Ja
   rn_no: Nein

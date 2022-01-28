@@ -21,7 +21,7 @@ Please follow the standard procedure for redmine plugins.
 All settings are available on the Redmine plugin page: \
 ``<servername>/admin/plugins``
 
-# Logos
+### Logos
 If you like to display an image in header or footer
 you need to place the images by default here.
 

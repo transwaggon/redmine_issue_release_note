@@ -4,6 +4,13 @@ module RedmineIssueReleaseNote::Patches::IssuePatch
   extend ActiveSupport::Concern
 
   included do
+    def self.release_notes
+      custom_field_id = IssueCustomField.where('name like ?', 'release dat%').first
+      Issue.joins(:custom_values)
+           .where(custom_values: { custom_field: custom_field_id } )
+           .order(value: :desc)
+    end
+
     def developers(time_activity_id = 9)
       activity = TimeEntryActivity.find(time_activity_id)
       return nil unless activity
