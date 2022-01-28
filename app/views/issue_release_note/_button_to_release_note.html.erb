@@ -1,11 +1,11 @@
 <% release_values = @issue.custom_field_values_by_reg(/(release)/i) %>
+<% correct_count = (Setting.plugin_redmine_issue_release_note['rn_names_text'] || '').split('|').count + 1  %>
 
-<%# todo Create setting for field count %>
-<% if release_values.count == 3 %>
-  <% values = release_values.map { |value| value.value }.reject(&:empty?) %>
+<% if release_values.count == correct_count %>
+  <% values = release_values.map(&:value).compact.reject(&:empty?) %>
     <%= button_to(t('download_release_note', default: 'Download Release Note'),
                   download_release_note_path(format: :pdf),
-                  method: :get, disabled: values.count != 3) %>
+                  method: :get, disabled: values.count != correct_count) %>
   <% if values.count != 3 %>
     <%= t('missing_release_note') %>
   <% end %>
