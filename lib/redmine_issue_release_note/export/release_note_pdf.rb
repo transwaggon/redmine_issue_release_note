@@ -130,7 +130,12 @@ class RedmineIssueReleaseNote::Export::ReleaseNotePDF < ITCPDF
   end
 
   def get_formatted_text(value)
-    Class.new.extend(ApplicationHelper).textilizable(value, :object => nil)
+    Class.new.extend(ApplicationHelper).textilizable(value,
+                                                     :object => nil,
+                                                     :only_path => false,
+                                                     :edit_section_links => false,
+                                                     :headings => false,
+                                                     :inline_attachments => false)
   end
 
   def get_work_area_width
