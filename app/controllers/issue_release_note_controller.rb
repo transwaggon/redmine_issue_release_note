@@ -1,5 +1,6 @@
 class IssueReleaseNoteController < ApplicationController
-  before_action :find_issue, :only => [:download]
+  before_action :find_issue, only: :download
+  before_action :require_login, only: :index
 
   def download
     send_file_headers! type: 'application/pdf', filename: filename
@@ -27,13 +28,13 @@ class IssueReleaseNoteController < ApplicationController
   private
 
   def filename
-    # todo Make filename configurable
     "#{t('ticket_prefix', default: 'Ticket')} ##{@issue.id} - #{@issue.subject}"
   end
 
   def scary_params
     params.permit(:no_layout, :subject, :release_date_from, :release_date_until, :page)
   end
+
 
   def find_issue
     # Issue.visible.find(...) can not be used to redirect user to the login form
