@@ -28,7 +28,7 @@ class IssueReleaseNoteController < ApplicationController
   private
 
   def filename
-    "#{t('ticket_prefix', default: 'Ticket')} ##{@issue.id} - #{@issue.subject}"
+    "#{t('ticket_prefix', default: 'Ticket')} ##{@issue.id} - #{@issue.subject}.pdf"
   end
 
   def scary_params
