@@ -62,6 +62,11 @@
              name_list: %w[rn_list_caption_width rn_field_gap],
              settings: settings, defaults: defaults } %>
 <p>
+  <label><%= l(:rn_issue_show_names) %>:</label>
+  <%= select_tag('settings[rn_issue_show_names]',
+                 options_for_select(ya_no_options, settings['rn_issue_show_names'])) %>
+</p>
+<p>
   <label><%= l(:rn_names_text) %>:</label>
   <%= text_field_tag('settings[rn_names_text]',
                      settings['rn_names_text'] || defaults[:rn_names_text],

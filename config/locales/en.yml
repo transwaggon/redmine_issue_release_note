@@ -43,6 +43,7 @@ en:
   rn_time_activity_find: Link Enumerations
   rn_override_language: Language
   rn_image_scale: Image Scale
+  rn_issue_show_names: Show Custom Fields in Issue
   rn_names_text: Custom Field Names for Texts
   rn_name_date: Custom Field Name for Release Date
   rn_attachment_regex: RegEx to find attachments

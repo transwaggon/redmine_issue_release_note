@@ -40,6 +40,7 @@ Redmine::Plugin.register :redmine_issue_release_note do
               rn_time_activity_id: 9,
               rn_override_language: '',
               rn_image_scale: 1.6,
+              rn_issue_show_names: 'true',
               rn_names_text: 'Release Note (de)|Release Note (en)',
               rn_name_date: 'Release Date',
               rn_attachment_regex: 'rl|rn|release|note'

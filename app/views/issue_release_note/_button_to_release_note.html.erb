@@ -1,5 +1,10 @@
+<%= javascript_include_tag('issue_release_note.js', plugin: 'redmine_issue_release_note') %>
+
 <% release_values = @issue.custom_field_values_by_reg(/(release)/i) %>
-<% correct_count = (Setting.plugin_redmine_issue_release_note['rn_names_text'] || '').split('|').count + 1  %>
+<% field_names = (Setting.plugin_redmine_issue_release_note['rn_names_text'] || '').split('|') %>
+<% correct_count = field_names.count + 1  %>
+<% show_custom_field = (Setting.plugin_redmine_issue_release_note['rn_issue_show_names'] || 'true') == 'true' %>
+<% custom_field_ids = @issue.custom_field_values_by_names(field_names).map { |field| field.custom_field.id } unless show_custom_field %>
 
 <% if release_values.count == correct_count %>
   <% values = release_values.map(&:value).compact.reject(&:empty?) %>
@@ -13,5 +18,15 @@
   <% end %>
   <% if values.count != correct_count %>
     <%= t(missing_hint_i18n_key) %>
+  <% end %>
+<% end %>
+
+<% unless show_custom_field %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      <% custom_field_ids.each do |id| %>
+        hideReleaseNoteFieldText(<%= id %>)
+      <% end %>
+    });
   <% end %>
 <% end %>
