@@ -40,6 +40,7 @@ module IssueReleaseNoteHelper
     pdf.write_table_cell_item l(:field_subject), issue.subject
     pdf.write_table_cell_item l(:field_project), issue.project
     pdf.write_table_cell_item l(:field_tracker), issue.tracker
+    pdf.write_table_cell_item l(:field_author), issue.author
     activity_id = Setting.plugin_redmine_issue_release_note['rn_time_activity_id']&.to_i
     pdf.write_table_cell_item l(:issue_developer), issue.main_developer(activity_id) || issue.assigned_to
     pdf.write_table_cell_item l(:release_note_date), format_date(issue.release_date)

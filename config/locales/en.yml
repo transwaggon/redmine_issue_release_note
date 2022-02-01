@@ -8,7 +8,6 @@ en:
   release_note_incomplete: Release Note incomplete
   issue_identifier: Ticket
   issue_subject: Title
-  issue_author: Author
   issue_developer: Developer
   release_note_date: Release Date
   release_note_date_filter: Released from/until

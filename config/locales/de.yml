@@ -8,7 +8,6 @@ de:
   release_note_incomplete: Release Note Daten sind noch unvollständig
   issue_identifier: Ticket
   issue_subject: Titel
-  issue_author: Autor
   issue_developer: Entwickler
   release_note_date: Release Datum
   release_note_date_filter: Released von/bis
