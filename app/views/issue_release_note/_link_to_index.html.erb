@@ -1,2 +1,6 @@
-<h3><%= l(:release_note) %></h3>
+<h3>
+  <%= Setting.plugin_redmine_issue_release_note[:rn_title_pluralize].present? ?
+        Setting.plugin_redmine_issue_release_note[:rn_title_pluralize] :
+        l(:release_note) %>
+</h3>
 <%= link_to l(:rn_overview), release_notes_path %>

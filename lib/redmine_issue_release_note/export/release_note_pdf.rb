@@ -8,8 +8,6 @@ class RedmineIssueReleaseNote::Export::ReleaseNotePDF < ITCPDF
   RN_PDF_AUTHOR = 'Redmine Issue Release Note'
   RN_FONT_SIZE_FOOTER = 10
 
-  # Others
-
   def getSetting(key)
     Setting.plugin_redmine_issue_release_note[key]
   end
@@ -80,9 +78,11 @@ class RedmineIssueReleaseNote::Export::ReleaseNotePDF < ITCPDF
     set_header_font(['', '', getSettingF('rn_font_size_title')])
     set_print_header(getSettingB('rn_header_enabled') && File::exists?(getSetting('rn_header_logo')))
     set_header_margin(getSettingF('rn_header_margin'))
+    title = getSetting(:rn_title_singular)
+    title = I18n.t(:release_note) unless title.present?
     set_header_data(getSetting('rn_header_logo'),
                     getSettingF('rn_header_logo_width'),
-                    I18n.t('release_note', default: 'Release Note'))
+                    title)
   end
 
   def set_rn_footer

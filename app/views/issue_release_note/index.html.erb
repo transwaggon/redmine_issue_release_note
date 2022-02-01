@@ -1,4 +1,6 @@
-<h2><%=l(:release_notes)%></h2>
+<h2>
+  <%= release_note_setting(:rn_title_pluralize, l(:release_notes)) %>
+</h2>
 
 <% unless @no_layout %>
   <%= form_tag(release_notes_path, { method: :get, id: 'release_note_form' }) do %>
@@ -55,4 +57,4 @@
   <p class="nodata"><%= l(:label_no_data) %></p>
 <% end %>
 
-<% html_title(l(:release_notes)) -%>
+<% html_title(release_note_setting(:release_notes, l(:release_notes))) -%>

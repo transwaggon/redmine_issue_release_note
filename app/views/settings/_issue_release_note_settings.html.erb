@@ -1,6 +1,17 @@
 <%- defaults = Redmine::Plugin::registered_plugins[:redmine_issue_release_note].settings[:default] -%>
 <%- ya_no_options = [[l(:rn_yes), true], [l(:rn_no), false]] -%>
 
+<h2><%= l(:settings) %></h2>
+<p>
+  <label><%= l(:rn_title_singular) %>:</label>
+  <%= text_field_tag('settings[rn_title_singular]', settings['rn_title_singular'] || defaults[:rn_title_singular] ) %>
+  <%= "Default: #{l(:release_note)}" %>
+</p>
+<p>
+  <label><%= l(:rn_title_pluralize) %>:</label>
+  <%= text_field_tag('settings[rn_title_pluralize]', settings['rn_title_pluralize'] || defaults[:rn_title_pluralize] ) %>
+  <%= "Default: #{l(:release_notes)}" %>
+</p>
 
 <h2><%= l(:page) %></h2>
 <%= render partial: 'settings/issue_release_note_settings_list_numbers',
@@ -30,7 +41,7 @@
 <p>
   <label><%= l(:rn_footer_enabled) %>:</label>
   <%= select_tag('settings[rn_footer_enabled]',
-                 options_for_select(ya_no_options, settings["rn_footer_enabled"])) %>
+                 options_for_select(ya_no_options, settings['rn_footer_enabled'])) %>
 </p>
 <%= render partial: 'settings/issue_release_note_settings_list_numbers',
            locals: {
@@ -38,11 +49,11 @@
              settings: settings, defaults: defaults } %>
 <p>
   <label><%= l(:rn_footer_logo) %>:</label>
-  <%= text_field_tag("settings[rn_footer_logo]", settings["rn_footer_logo"] || defaults[:rn_footer_logo], rows: 5 ) %>
+  <%= text_field_tag('settings[rn_footer_logo]', settings['rn_footer_logo'] || defaults[:rn_footer_logo], rows: 5 ) %>
 </p>
 <p>
   <label><%= l(:rn_footer_company) %>:</label>
-  <%= text_area_tag("settings[rn_footer_company]", settings["rn_footer_company"] || defaults[:rn_footer_company], rows: 5 ) %>
+  <%= text_area_tag('settings[rn_footer_company]', settings['rn_footer_company'] || defaults[:rn_footer_company], rows: 5 ) %>
 </p>
 
 <h2><%= l(:others) %></h2>
@@ -63,18 +74,18 @@
 </p>
 <p>
   <label><%= l(:rn_time_activity_id) %>:</label>
-  <%= number_field_tag("settings[rn_time_activity_id]",
+  <%= number_field_tag('settings[rn_time_activity_id]',
                        settings['rn_time_activity_id'] || defaults[:rn_time_activity_id]) %>
   <%= link_to l(:rn_time_activity_find), enumerations_path %>
 </p>
 <p>
   <label><%= l(:rn_image_scale) %>:</label>
-  <%= number_field_tag("settings[rn_image_scale]", settings['rn_image_scale'] || defaults[:rn_image_scale], :step => 0.1) %>
+  <%= number_field_tag('settings[rn_image_scale]', settings['rn_image_scale'] || defaults[:rn_image_scale], :step => 0.1) %>
 </p>
 <p>
   <label><%= l(:rn_override_language) %>:</label>
-  <%= text_field_tag("settings[rn_override_language]",
-                     settings["rn_override_language"] || defaults[:rn_override_language]) %>
+  <%= text_field_tag('settings[rn_override_language]',
+                     settings['rn_override_language'] || defaults[:rn_override_language]) %>
 </p>
 <p>
   <label><%= l(:rn_attachment_regex) %>:</label>

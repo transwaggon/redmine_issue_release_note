@@ -4,7 +4,10 @@
 <% if release_values.count == correct_count %>
   <% values = release_values.map(&:value).compact.reject(&:empty?) %>
   <% if values.count == correct_count || force_button %>
-    <%= button_to(t('download_release_note', default: 'Download Release Note'),
+    <%= button_to(t('download_release_note',
+                    title: Setting.plugin_redmine_issue_release_note[:rn_title_singular].present? ?
+                             Setting.plugin_redmine_issue_release_note[:rn_title_singular] :
+                             l(:release_note)),
                   download_release_note_path(@issue, format: :pdf),
                   method: :get, disabled: values.count != correct_count) %>
   <% end %>

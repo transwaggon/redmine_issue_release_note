@@ -18,6 +18,12 @@ module IssueReleaseNoteHelper
     end
   end
 
+  def release_note_setting(name, default)
+    Setting.plugin_redmine_issue_release_note[name].present? ?
+      Setting.plugin_redmine_issue_release_note[name] :
+      default
+  end
+
   def issue_to_release_note(issue, assoc={})
     issues_includes
     language = Setting.plugin_redmine_issue_release_note['rn_override_language']

@@ -13,6 +13,9 @@ Redmine::Plugin.register :redmine_issue_release_note do
   requires_redmine version_or_higher: '4.2.1'
 
   settings default: {
+              rn_title_singular: '',
+              rn_title_pluralize: '',
+
               rn_page_margin_left: 15,
               rn_page_margin_top: 22,
               rn_page_margin_right: 15,
