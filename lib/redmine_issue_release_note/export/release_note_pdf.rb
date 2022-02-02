@@ -108,12 +108,13 @@ class RedmineIssueReleaseNote::Export::ReleaseNotePDF < ITCPDF
 
   def write_table_cell_item(caption, value = nil)
     set_default_font('B')
-    height = [get_string_height(35, caption),
-              get_string_height(60, value || '')].max
     cap_width = getSettingF('rn_list_caption_width')
+    value_width = get_work_area_width-cap_width
+    height = [get_string_height(cap_width, caption),
+              get_string_height(value_width, value || '')].max
     RDMMultiCell(cap_width, height, caption, 0, '', 0, 0)
     set_default_font
-    RDMMultiCell(get_work_area_width-cap_width, height, (value || '').to_s)
+    RDMMultiCell(value_width, height, (value || '').to_s)
   end
 
   def write_release_note_text(issue, name)
