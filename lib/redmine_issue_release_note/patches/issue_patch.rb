@@ -10,6 +10,7 @@ module RedmineIssueReleaseNote::Patches::IssuePatch
                           .first
       Issue.joins(:custom_values)
            .where(custom_values: { custom_field: custom_field_id } )
+           .where.not(custom_values: { value: [nil, ''] })
            .order(value: :desc)
     end
 
