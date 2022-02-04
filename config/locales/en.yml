@@ -4,8 +4,8 @@ en:
   release_notes: Release Notes
   download_release_note: "Download %{title}"
   rn_overview: Overview
-  missing_release_note: Please fill the release note fields
-  release_note_incomplete: Release Note incomplete
+  missing_release_note: Data incomplete
+  release_note_incomplete: Data incomplete
   issue_identifier: Ticket
   issue_subject: Title
   issue_developer: Developer
