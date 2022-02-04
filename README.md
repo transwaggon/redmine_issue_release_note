@@ -6,7 +6,7 @@
 ## Introduction
 This redmine plugin allows you to create a PDF file with release note information.
 
-The plugin is tested with redmine version **4.2.1**
+The plugin is tested with redmine version **4.2.1** and **4.2.3**.
 
 ## Installation
 Please follow the standard procedure for redmine plugins.
