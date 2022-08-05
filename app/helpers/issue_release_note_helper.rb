@@ -28,7 +28,7 @@ module IssueReleaseNoteHelper
     issues_includes
     language = Setting.plugin_redmine_issue_release_note['rn_override_language']
     language = language.present? ? language.to_sym : current_language
-    pdf = RedmineIssueReleaseNote::Export::ReleaseNotePDF.new(language)
+    pdf = RedmineIssueReleaseNote::Export::ReleaseNotePdf.new(language)
     pdf.set_rn_page(issue)
     pdf.set_rn_header
     pdf.set_rn_footer

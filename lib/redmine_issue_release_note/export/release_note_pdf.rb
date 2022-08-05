@@ -2,7 +2,7 @@
 include Redmine::Export::PDF::IssuesPdfHelper
 include Redmine::Export::PDF
 
-class RedmineIssueReleaseNote::Export::ReleaseNotePDF < ITCPDF
+class RedmineIssueReleaseNote::Export::ReleaseNotePdf < ITCPDF
 
   RN_PUBLIC_FOLDER = File.join(Rails.root, 'public')
   RN_PDF_AUTHOR = 'Redmine Issue Release Note'
