@@ -41,7 +41,7 @@ module RedmineIssueReleaseNote::Patches::IssuePatch
       custom_field_value_by_names([date_field_name])&.to_date
     end
   end
-end
+end unless defined? RedmineIssueReleaseNote::Patches::IssuePatch
 
 unless Issue.included_modules.include? RedmineIssueReleaseNote::Patches::IssuePatch
   Issue.send :include, RedmineIssueReleaseNote::Patches::IssuePatch

@@ -6,7 +6,7 @@ Redmine::Plugin.register :redmine_issue_release_note do
   name 'Redmine Issue Release Note plugin'
   author 'Matthias Röttger'
   description 'Provides release notes download for issues'
-  version '0.0.1'
+  version '0.0.2'
   url 'https://github.com/transwaggon/redmine_issue_release_note'
   author_url 'https://github.com/transwaggon'
 
@@ -48,5 +48,6 @@ Redmine::Plugin.register :redmine_issue_release_note do
            partial: 'settings/issue_release_note_settings'
 end
 
-require_dependency 'view_hook_listener'
+require_relative 'lib/view_hook_listener'
 require_relative 'lib/redmine_issue_release_note/patches/issue_patch'
+require_relative 'lib/redmine_issue_release_note/export/release_note_pdf'
