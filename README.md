@@ -6,7 +6,7 @@
 ## Introduction
 This redmine plugin allows you to create a PDF file with release note information.
 
-The plugin is tested with redmine version **5.0.0** and **5.0.1**.
+The plugin is tested with redmine version **5.0.0**, **5.0.1** and **5.0.2**.
 
 ## Installation
 Please follow the standard procedure for redmine plugins.
@@ -15,7 +15,7 @@ Please follow the standard procedure for redmine plugins.
 2. Extract the files to the ``<redmine>/plugin/`` directory
 3. Run plugin migration: ``rails redmine:plugins:migrate NAME=redmine_issue_release_note``
    * This will create some default custom fields
-5. Restart Redmine
+4. Restart Redmine
 
 ## Configuration
 All settings are available on the Redmine plugin page: \
