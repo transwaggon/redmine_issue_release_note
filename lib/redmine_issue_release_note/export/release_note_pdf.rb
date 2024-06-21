@@ -76,7 +76,7 @@ class RedmineIssueReleaseNote::Export::ReleaseNotePdf < ITCPDF
 
   def set_rn_header
     set_header_font(['', '', getSettingF('rn_font_size_title')])
-    set_print_header(getSettingB('rn_header_enabled') && File::exists?(getSetting('rn_header_logo')))
+    set_print_header(getSettingB('rn_header_enabled') && File::exist?(getSetting('rn_header_logo')))
     set_header_margin(getSettingF('rn_header_margin'))
     title = getSetting(:rn_title_singular)
     title = I18n.t(:release_note) unless title.present?
@@ -87,7 +87,7 @@ class RedmineIssueReleaseNote::Export::ReleaseNotePdf < ITCPDF
 
   def set_rn_footer
     set_footer_font(['', '', RN_FONT_SIZE_FOOTER])
-    set_print_footer(getSettingB('rn_footer_enabled') && File::exists?(getSetting('rn_footer_logo')))
+    set_print_footer(getSettingB('rn_footer_enabled') && File::exist?(getSetting('rn_footer_logo')))
     set_footer_margin(getSettingF('rn_footer_margin'))
   end
 

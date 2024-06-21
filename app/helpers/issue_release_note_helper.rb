@@ -34,13 +34,12 @@ module IssueReleaseNoteHelper
     pdf.set_rn_footer
 
     pdf.add_page
-    # pdf.write_caption(issue)
     pdf.set_image_scale(Setting.plugin_redmine_issue_release_note['rn_image_scale']&.to_f || 1.6)
     pdf.write_table_cell_item l(:issue_identifier), "##{issue.id}"
     pdf.write_table_cell_item l(:field_subject), issue.subject
-    pdf.write_table_cell_item l(:field_project), issue.project
-    pdf.write_table_cell_item l(:field_tracker), issue.tracker
-    pdf.write_table_cell_item l(:field_author), issue.author
+    pdf.write_table_cell_item l(:field_project), issue.project.name
+    pdf.write_table_cell_item l(:field_tracker), issue.tracker.name
+    pdf.write_table_cell_item l(:field_author), issue.author.name
     activity_id = Setting.plugin_redmine_issue_release_note['rn_time_activity_id']&.to_i
     pdf.write_table_cell_item l(:issue_developer), issue.main_developer(activity_id) || issue.assigned_to
     pdf.write_table_cell_item l(:release_note_date), format_date(issue.release_date)
@@ -53,7 +52,7 @@ module IssueReleaseNoteHelper
       regex = /(#{Setting.plugin_redmine_issue_release_note['rn_attachment_regex'] || ''})/i
       issue.attachments.each do |attachment|
         if attachment.description.to_s.match? regex
-          pdf.write_value("!#{attachment.filename.gsub(' ', '%20')}!", issue, '')
+          pdf.write_value("![](#{attachment.filename.gsub(' ', '%20')})", issue, '')
         end
       end
     end
